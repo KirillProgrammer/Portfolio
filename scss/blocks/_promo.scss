@@ -1,5 +1,7 @@
 section {
+  margin-top: 50px;
   background-color: $first-color;
+
 }
 .promo {
   margin: 0;
@@ -13,26 +15,35 @@ section {
   &__wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 30px;
+    column-gap: 90px;
+    img {
+      width: 80%;
+      border-radius: 30px;
+    }
   }
   &__descr {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     &__text {
+      margin-top: 30px;
       position: relative;
-      &::before {
-        content: "";
-        position: absolute;
-        top: 40px;
-        left: -70px;
-        width: 116px;
-        height: 5px;
-        background: linear-gradient(90deg, $third-color 0%, $fourth-color 100%);
-        border-radius: 2px;
-        transform: rotate(-90deg);
+      p {
+        &::before {
+          content: "";
+          position: absolute;
+          top: 110px;
+          left: -70px;
+          width: 116px;
+          height: 5px;
+          background: linear-gradient(90deg, $second-color 0%, $fourth-color 100%);
+          border-radius: 2px;
+          transform: rotate(-90deg);
+        }
       }
     }
   }
   &__icons {
-    margin-top: 180px;
     p {
       font-weight: bold;
       font-size: 20px;
@@ -42,4 +53,20 @@ section {
 
 .svg {
   width: 60px;
+  margin-right: 5px;
+  &:hover {
+    animation: icons .5s;
+  }
+}
+
+@keyframes icons {
+  0% {
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.0);
+  }
 }
